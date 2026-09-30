@@ -11,3 +11,4 @@ A beginner-friendly app for learning two-character Chinese phrases (simplified c
 ## Conventions
 - The owner is new to coding. Keep code simple and commented, and avoid frameworks or tools that need installing unless we agree to add them.
 - Pinyin uses tone marks (nǐ hǎo), not tone numbers.
+- The project uses Git. Commit after each working change with a plain-English message, so the owner can ask to undo or go back.
