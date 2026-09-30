@@ -10,6 +10,15 @@
   <header>
     <h1>Chinese Phrases</h1>
     <div class="controls">
+      <label>Show
+        <select id="filter">
+          <option value="all">All phrases</option>
+          <option value="notknown">Not known yet</option>
+          <option value="new">New</option>
+          <option value="learning">Still learning</option>
+          <option value="known">Known</option>
+        </select>
+      </label>
       <label><input type="checkbox" id="quiz-toggle"> Quiz mode</label>
       <label><input type="checkbox" id="slow-toggle"> Slow audio</label>
     </div>
@@ -22,30 +31,71 @@
       Windows Settings → Time &amp; language → Speech.
     </p>
 
-    <section class="card">
-      <div class="counter" id="counter"></div>
-      <button class="hanzi" id="hanzi" title="Click to hear it"></button>
-      <div class="reveal" id="reveal">
-        <div class="pinyin" id="pinyin"></div>
-        <div class="meaning" id="meaning"></div>
+    <!-- Progress summary -->
+    <section class="progress">
+      <div class="progress-line">
+        <span><strong id="chars-known">0</strong> / 200 most common characters known</span>
+        <span class="progress-actions">
+          <button id="grid-toggle" class="small">Show characters</button>
+          <button id="reset" class="small">Reset</button>
+        </span>
       </div>
-      <button class="show-answer" id="show-answer" hidden>Show answer</button>
-      <button class="play" id="play">🔊 Play</button>
+      <div class="bar"><div class="bar-fill" id="bar-fill"></div></div>
+      <div class="phrase-stats" id="phrase-stats"></div>
+
+      <div id="grid-panel" hidden>
+        <div class="legend">
+          <span><i class="dot known"></i>Known</span>
+          <span><i class="dot learning"></i>Learning</span>
+          <span><i class="dot"></i>Not yet</span>
+          <span class="muted">Click a character to jump to a phrase that uses it</span>
+        </div>
+        <div class="char-grid" id="char-grid"></div>
+      </div>
     </section>
 
-    <section class="examples">
-      <h2>Examples</h2>
-      <ol id="examples"></ol>
+    <!-- Shown when the filter has no phrases -->
+    <section class="card" id="empty" hidden>
+      <p>No phrases here yet. Pick a different option under “Show”.</p>
     </section>
 
-    <nav class="nav">
-      <button id="prev">← Prev</button>
-      <button id="shuffle">Shuffle</button>
-      <button id="next">Next →</button>
-    </nav>
-    <p class="hint">Keyboard: ← → to move, Space to play</p>
+    <div id="study">
+      <section class="card">
+        <div class="card-top">
+          <span class="counter" id="counter"></span>
+          <span class="badge" id="badge"></span>
+        </div>
+        <button class="hanzi" id="hanzi" title="Click to hear it"></button>
+        <div class="reveal" id="reveal">
+          <div class="pinyin" id="pinyin"></div>
+          <div class="meaning" id="meaning"></div>
+          <div class="breakdown" id="breakdown"></div>
+        </div>
+        <button class="show-answer" id="show-answer" hidden>Show answer</button>
+        <div class="card-actions">
+          <button id="play">🔊 Play</button>
+        </div>
+        <div class="mark">
+          <button id="mark-learning" class="learning-btn">Still learning</button>
+          <button id="mark-known" class="known-btn">Know it ✓</button>
+        </div>
+      </section>
+
+      <section class="examples">
+        <h2>Examples</h2>
+        <ol id="examples"></ol>
+      </section>
+
+      <nav class="nav">
+        <button id="prev">← Prev</button>
+        <button id="shuffle">Shuffle</button>
+        <button id="next">Next →</button>
+      </nav>
+      <p class="hint">Keyboard: ← → move · Space play · K know it · L still learning</p>
+    </div>
   </main>
 
+  <script src="chars.js"></script>
   <script src="phrases.js"></script>
   <script src="app.js"></script>
 </body>
