@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chinese Phrases</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Chinese Phrases</h1>
+    <div class="controls">
+      <label><input type="checkbox" id="quiz-toggle"> Quiz mode</label>
+      <label><input type="checkbox" id="slow-toggle"> Slow audio</label>
+    </div>
+  </header>
+
+  <main>
+    <p id="voice-warning" class="warning" hidden>
+      No Chinese voice was found in this browser, so audio won't play.
+      Try Microsoft Edge or Chrome, or add a Chinese voice in
+      Windows Settings → Time &amp; language → Speech.
+    </p>
+
+    <section class="card">
+      <div class="counter" id="counter"></div>
+      <button class="hanzi" id="hanzi" title="Click to hear it"></button>
+      <div class="reveal" id="reveal">
+        <div class="pinyin" id="pinyin"></div>
+        <div class="meaning" id="meaning"></div>
+      </div>
+      <button class="show-answer" id="show-answer" hidden>Show answer</button>
+      <button class="play" id="play">🔊 Play</button>
+    </section>
+
+    <section class="examples">
+      <h2>Examples</h2>
+      <ol id="examples"></ol>
+    </section>
+
+    <nav class="nav">
+      <button id="prev">← Prev</button>
+      <button id="shuffle">Shuffle</button>
+      <button id="next">Next →</button>
+    </nav>
+    <p class="hint">Keyboard: ← → to move, Space to play</p>
+  </main>
+
+  <script src="phrases.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
