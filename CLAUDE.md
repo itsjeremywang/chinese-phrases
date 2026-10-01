@@ -10,8 +10,10 @@ A beginner-friendly app for learning two-character Chinese phrases (simplified c
 - `styles.css`: styling, with light and dark mode.
 - `serve.ps1`: optional tiny PowerShell web server (http://localhost:8123) used for previewing and testing; `../.claude/launch.json` points the preview tool at it.
 
+- `phrases-common.js`: `TOP_400_PHRASES` (the 400 most common two-character words in spoken Chinese, from the OpenSubtitles zh_cn list in hermitdave/FrequencyWords, with traditional duplicates, fragments like 我要, names and profanity removed) and `PHRASES.push(...)` for the ones not already in `phrases.js`. Cards show a phrase's rank in this list.
+
 ## Coverage
-Every `TOP_200` character appears in at least one phrase except 又 (almost always used on its own). Each example sentence must contain its phrase's exact characters so highlighting works.
+Every `TOP_200` character appears in at least one phrase except 又 (almost always used on its own), and every `TOP_400_PHRASES` word is a phrase. The progress tracker counts characters only, not phrases (the owner's choice). Each example sentence must contain its phrase's exact characters so highlighting works.
 
 ## Conventions
 - The owner is new to coding. Keep code simple and commented, and avoid frameworks or tools that need installing unless we agree to add them.
