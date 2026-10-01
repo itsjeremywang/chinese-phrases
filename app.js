@@ -230,16 +230,32 @@ function jumpToChar(ch) {
   setFilter("all");
   const found = order.findIndex((i) => PHRASES[i].hanzi.includes(ch));
   if (found === -1) {
-    alert(`${ch} doesn't appear in a phrase yet.`);
+    $("grid-note").textContent = `${ch} doesn't appear in a phrase yet.`;
     return;
   }
+  $("grid-note").textContent = "";
   index = found;
   render();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// Reset asks for a second click instead of a pop-up (pop-ups are blocked on shared pages).
+let resetArmed = false;
+let resetTimer = null;
+
 function resetProgress() {
-  if (!confirm("Clear all your progress? This can't be undone.")) return;
+  if (!resetArmed) {
+    resetArmed = true;
+    $("reset").textContent = "Click again to clear all progress";
+    resetTimer = setTimeout(() => {
+      resetArmed = false;
+      $("reset").textContent = "Reset";
+    }, 4000);
+    return;
+  }
+  clearTimeout(resetTimer);
+  resetArmed = false;
+  $("reset").textContent = "Reset";
   progress = {};
   saveProgress();
   buildOrder();
