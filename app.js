@@ -110,6 +110,8 @@ function render() {
   $("badge").textContent = STATUS_LABELS[status];
   $("badge").className = `badge ${status}`;
   $("hanzi").textContent = phrase.hanzi;
+  const phraseRank = TOP_400_PHRASES.indexOf(phrase.hanzi);
+  $("phrase-rank").textContent = phraseRank >= 0 ? `#${phraseRank + 1} most common phrase` : "";
   $("pinyin").textContent = phrase.pinyin;
   $("meaning").textContent = phrase.meaning;
   $("reveal").classList.toggle("hidden", hideAnswer);

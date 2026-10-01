@@ -168,6 +168,8 @@ button.small { padding: 4px 10px; font-size: 0.85rem; }
   cursor: pointer;
 }
 
+.phrase-rank { color: var(--muted); font-size: 0.8rem; min-height: 1em; margin-bottom: 8px; }
+
 .pinyin { font-size: 1.6rem; color: var(--accent); }
 .meaning { font-size: 1.2rem; margin-top: 4px; }
 
