@@ -19,3 +19,8 @@ Every `TOP_200` character appears in at least one phrase except 又 (almost alwa
 - The owner is new to coding. Keep code simple and commented, and avoid frameworks or tools that need installing unless we agree to add them.
 - Pinyin uses tone marks (nǐ hǎo), not tone numbers.
 - The project uses Git. Commit after each working change with a plain-English message, so the owner can ask to undo or go back.
+
+## Publishing
+- Live site: https://itsjeremywang.github.io/chinese-phrases/ (GitHub Pages from `main`, public repo github.com/itsjeremywang/chinese-phrases). Pushing to `main` redeploys it within a minute or two.
+- Commits use the GitHub no-reply email (set in this repo's git config); never commit the owner's personal email, since the repo is public.
+- There's also a private claude.ai artifact copy, published from a single-file bundle of index.html + styles.css + the JS files. Shared pages block alert/confirm/prompt, so keep confirmations on the page.
