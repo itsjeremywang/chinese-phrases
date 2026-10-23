@@ -23,4 +23,4 @@ Every `TOP_200` character appears in at least one phrase except 又 (almost alwa
 ## Publishing
 - Live site: https://itsjeremywang.github.io/chinese-phrases/ (GitHub Pages from `main`, public repo github.com/itsjeremywang/chinese-phrases). Pushing to `main` redeploys it within a minute or two.
 - Commits use the GitHub no-reply email (set in this repo's git config); never commit the owner's personal email, since the repo is public.
-- There's also a private claude.ai artifact copy, published from a single-file bundle of index.html + styles.css + the JS files. Shared pages block alert/confirm/prompt, so keep confirmations on the page.
+- The GitHub Pages site is the only published copy (a claude.ai artifact copy was deleted on 2026-10-23 to avoid out-of-date versions). Keep confirmations on the page rather than using alert/confirm, so the app also works if it's ever embedded or republished somewhere that blocks pop-ups.
