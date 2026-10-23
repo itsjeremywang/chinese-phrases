@@ -62,6 +62,7 @@ header {
 }
 
 h1 { font-size: 1.2rem; margin: 0; }
+.mini-mode-link { font-size: 0.85rem; font-weight: normal; color: var(--accent); text-decoration: none; margin-left: 8px; }
 h2 { font-size: 1rem; color: var(--muted); margin: 0 0 8px; }
 
 .controls { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.9rem; align-items: center; }

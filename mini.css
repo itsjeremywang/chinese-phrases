@@ -1,0 +1,60 @@
+/* Mini mode: one phrase filling a phone screen. Colors and buttons come from styles.css. */
+
+html, body.mini { height: 100%; }
+
+body.mini {
+  display: flex;
+  flex-direction: column;
+  /* keep clear of the iPhone notch and home bar */
+  padding: env(safe-area-inset-top, 0px) 16px env(safe-area-inset-bottom, 0px);
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mini-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+  font-size: 0.85rem;
+}
+.mini-stats { color: var(--muted); }
+.mini-stats strong { color: var(--text); }
+.mini-link { color: var(--accent); text-decoration: none; white-space: nowrap; }
+
+.mini .bar { margin: 8px 0 0; height: 4px; }
+.mini .warning { margin: 8px 0 0; }
+
+.mini-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  touch-action: pan-y; /* lets us detect left/right swipes */
+}
+
+#study { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+
+.mini-hanzi {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text);
+  font-size: min(32vw, 9rem);
+  line-height: 1.15;
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+}
+.mini-pinyin { font-size: 1.8rem; color: var(--accent); }
+.mini-meaning { font-size: 1.15rem; max-width: 22em; }
+.mini .badge { margin-top: 10px; }
+
+.mini-bottom { display: flex; flex-direction: column; gap: 12px; padding-bottom: 16px; }
+
+.mini-mark { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mini-nav { display: grid; grid-template-columns: 72px 1fr 72px; gap: 10px; align-items: center; text-align: center; }
+
+.mini-bottom button { padding: 14px 8px; font-size: 1.05rem; border-radius: 12px; }

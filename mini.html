@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Chinese Phrases Mini</title>
+
+  <!-- These make "Add to Home Screen" open it full screen like an app -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Phrases">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mini.css">
+</head>
+<body class="mini">
+  <div class="mini-top">
+    <span class="mini-stats"><strong id="chars-known">0</strong> / 200 characters</span>
+    <select id="filter" aria-label="Which phrases to show">
+      <option value="all">All</option>
+      <option value="notknown">Not known yet</option>
+      <option value="new">New</option>
+      <option value="learning">Still learning</option>
+      <option value="known">Known</option>
+    </select>
+    <a class="mini-link" href="index.html">Full version</a>
+  </div>
+  <div class="bar"><div class="bar-fill" id="bar-fill"></div></div>
+
+  <p id="voice-warning" class="warning" hidden>No Chinese voice found on this device, so audio won't play.</p>
+
+  <div class="mini-card" id="card">
+    <div id="study">
+      <button class="mini-hanzi" id="hanzi" title="Tap to hear it"></button>
+      <div class="mini-pinyin" id="pinyin"></div>
+      <div class="mini-meaning" id="meaning"></div>
+      <span class="badge" id="badge"></span>
+    </div>
+    <p id="empty" hidden>No phrases here yet. Pick a different option at the top.</p>
+  </div>
+
+  <div class="mini-bottom">
+    <div class="mini-mark">
+      <button id="mark-learning" class="learning-btn">Still learning</button>
+      <button id="mark-known" class="known-btn">Know it ✓</button>
+    </div>
+    <div class="mini-nav">
+      <button id="prev" aria-label="Previous phrase">←</button>
+      <span class="counter" id="counter"></span>
+      <button id="next" aria-label="Next phrase">→</button>
+    </div>
+  </div>
+
+  <script src="chars.js"></script>
+  <script src="phrases.js"></script>
+  <script src="phrases-common.js"></script>
+  <script src="mini.js"></script>
+</body>
+</html>
